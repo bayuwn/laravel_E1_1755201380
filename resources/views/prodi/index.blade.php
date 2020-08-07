@@ -4,7 +4,7 @@
 @section('bread2','Data')
 @section('content')
   <h3>Master Data Prodi</h3>
-  <p><a href="/mhs/create" class="btn btn-success btn-sm">Tambah</a></p>
+  <p><a href="/prodi/create" class="btn btn-success btn-sm">Tambah</a></p>
     @include('layouts.alert')
   <table class="table table-striped" id="mhs-table">
     <thead>
@@ -19,7 +19,7 @@
     <tbody>
       @forelse ($prodi as $item)
       <tr>
-        <td>{{ $loop->index +1 }}</td>
+        <td>{{ $loop->index + 1 }}</td>
         <td>{{ $item->kode_prodi }}</td>
         <td>{{ $item->nama_prodi }}</td>
         <td>{{ $item->kaprodi }}</td>
