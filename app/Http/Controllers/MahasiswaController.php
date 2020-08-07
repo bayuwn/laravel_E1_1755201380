@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mahasiswa;
 use Illuminate\Http\Request;
+use Yajra\DataTables\DataTables;
 
 class MahasiswaController extends Controller
 {
@@ -16,6 +18,12 @@ class MahasiswaController extends Controller
         return view('mahasiswa.index');
     }
 
+    public function mhs_list() {
+        return DataTables::of(Mahasiswa::all())
+        ->addIndexColumn()
+                ->toJson();
+    }
+    
     /**
      * Show the form for creating a new resource.
      *
